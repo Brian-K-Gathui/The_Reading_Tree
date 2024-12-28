@@ -151,6 +151,36 @@ Start the CLI application by running the following command in the root directory
 python -m lib.cli
 ```
 
+## Future Works
+
+As we continue to enhance and expand the Bookstore Management System for **The Reading Tree**, several exciting features are planned for future development. These improvements aim to provide more functionality, increase efficiency, and deliver a better user experience. Below are the upcoming additions:
+
+### Authentication and Role-Based Access
+- **Login System for Managers and Staff**: Implement user authentication to ensure secure access. Managers and staff will have distinct roles, with functionality restricted based on their role.
+- **Role-Based Access Control**: Managers will have full access to the system, while staff access will be limited to specific features, such as viewing inventory or logging transactions.
+
+### Transaction Management
+- **Enterprise Transactions**: Introduce a model to track enterprises that require bulk orders, ensuring efficient handling of large transactions.
+- **Customer Transactions**: Record individual customer purchases to analyze trends and generate insights on buying behavior.
+
+### Sales and Transactions Tracking
+- **Sales Logging**: Track daily or weekly sales data for business analytics.
+- **Best-Selling Titles**: Identify top-selling books and generate reports.
+- **Sales Reports**: Print detailed sales reports to facilitate business analysis and decision-making.
+
+### Membership and Loyalty Programs
+- **Customer Accounts**: Allow customers to create accounts that store their purchase history.
+- **Loyalty Points**: Implement a loyalty program that rewards frequent buyers with points or discounts, enhancing customer retention.
+
+### Supplier Management
+- **Supplier Data Monitoring**: Track supplier details and order statuses for efficient restocking of popular books.
+- **Restocking Alerts**: Automate notifications for low-stock items, ensuring inventory is always prepared.
+
+### Additional Notes
+These future features will enhance the system's scalability and usability, aligning with **The Reading Tree**'s growth and operational needs. Each addition will be carefully designed to ensure seamless integration with the current architecture while maintaining high standards of performance and security.
+
+I look forward to implementing these features in subsequent updates, making the system even more robust and user-friendly!
+
 ## License
 
 MIT License  
