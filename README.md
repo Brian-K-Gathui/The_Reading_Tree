@@ -1,69 +1,62 @@
-Bookstore Management System
+# Phase 3 Final Project – The Reading Tree Bookstore Management System
+---
 
-Project Description
+**Author:** Brian Kinyanjui Gathui  
+**Email:** briankgathui@gmail.com
 
-"My Phase 3 project is a Bookstore Management System tailored for a small bookstore in Nairobi, The Reading Tree. The CLI-based application will streamline store operations by providing features for managing book inventory, authors, and sales transactions. Built with Python and SQLAlchemy, the system will include a well-structured database with at least three related tables: Books, Authors, and Transactions (or Categories, if implemented).
+---
 
-The CLI will offer an intuitive user experience, complete with input validation, organized menus, and seamless data retrieval, ensuring efficient management of store operations."
+## Project Description
+The Reading Tree Bookstore Management System is a Command-Line Interface (CLI) application developed for "The Reading Tree," a small bookstore in Nairobi. This Python-based application utilizes SQLAlchemy for Object-Relational Mapping (ORM) and Alembic for database migrations, streamlining the management of book inventory, authors, and sales transactions. This project aims to enhance operational efficiency for "The Reading Tree" by providing a robust and user-friendly system for managing core business aspects.
 
-Overview
+---
 
-The Bookstore Management System is a Command-Line Interface (CLI) application designed for a small bookstore in Nairobi, The Reading Tree. This Python-based application leverages SQLAlchemy ORM and Alembic to manage a relational database for the bookstore's inventory and sales. The system allows users to manage book inventory, authors, and transactions efficiently.
+## User Stories for the MVP
 
-The application is organized following best practices for CLI design, Object-Oriented Programming (OOP), and Python project structure. It includes clear user prompts, error handling, and input validation for an intuitive user experience.
+1. **Inventory Management**  
+   As a store manager, I want to add new books (with details like title, author, genre, and price) so that the store’s inventory is always up-to-date and accurate.
 
-User Stories for the Minimum Viable Product (MVP)
+2. **Book Search**  
+   As a staff member, I want to search and view all books by author or genre so that I can quickly recommend titles to customers.
 
-1. Inventory Management
+3. **Inventory Update**  
+   As a manager, I want to delete or edit the details of a book (e.g., when the price changes or a book is out of stock) so that the store’s records reflect real-time availability and pricing.
 
-As a store manager, I want to add new books (with details like title, author, genre, and price) so that the store’s inventory is always up-to-date and accurate.
+---
 
-2. Book Search
+## Key Features
 
-As a staff member, I want to search and view all books by author or genre so that I can quickly recommend titles to customers.
+- **Comprehensive Entity Management**:  
+  - Manage publishers: Add, view, update, delete, and search publishers by name.  
+  - Manage authors: Add, view, update, delete, and search authors by name.  
+  - Manage books: Add, view, update, delete, and search books by ISBN.  
+  - Manage warehouses: Add, view, update, delete, and search warehouses by code.  
+  - Manage customers: Add, view, update, delete, and search customers by email.
 
-3. Inventory Update
+- **User-Friendly CLI**:  
+  - Intuitive and user-friendly CLI with clear prompts, input validation, and error handling for seamless data entry and retrieval.  
+  - Utilizes color and ASCII art to enhance the user experience (optional based on preference).
 
-As a manager, I want to delete or edit the details of a book (e.g., when the price changes or a book is out of stock) so that the store’s records reflect real-time availability and pricing.
+- **Robust Database Management**:  
+  - Well-structured relational database with at least six tables: Books, Authors, Publishers, Warehouses, Customers, and Transactions (depending on implementation).  
+  - Leverages SQLAlchemy ORM for efficient data manipulation.  
+  - Employs Alembic for database migrations, facilitating future database schema changes.
 
-Features
+---
 
-Core Features
+## Technologies Used
 
-Inventory Management
 
-Add new books with details such as title, author, genre, and price.
+- Python
+- SQLAlchemy ORM
+- Alembic for database migrations
+- Pipenv for virtual environment and dependency management
 
-Search and view books by author or genre.
+---
 
-Edit or delete book details to ensure accurate and up-to-date records.
+## Project Structure
 
-Database Management
-
-SQLAlchemy ORM for managing the database schema.
-
-Alembic for handling migrations and maintaining database history.
-
-Stretch Goals
-
-1. Sales/Transactions Tracking
-
-Enable daily or weekly sales logging, tracking of best-selling titles, and generation of sales reports for business analysis.
-
-2. Membership & Loyalty Program
-
-Implement customer accounts with loyalty points or discounts for frequent buyers.
-
-3. Supplier Management
-
-Add functionality to monitor supplier data and order statuses, aiding in the restocking of popular books.
-
-4. Dark Mode
-
-Include a CLI "dark mode" styling option to reduce eye strain for staff working in dim lighting conditions.
-
-Directory Structure
-
+```
 .
 ├── Pipfile
 ├── Pipfile.lock
@@ -76,109 +69,54 @@ Directory Structure
     │   ├── migrations        # Alembic migration files
     ├── helpers.py            # Helper functions for CLI logic
     ├── debug.py              # Debugging utilities
+```
+---
 
-Setup Instructions
+## How to Use and Access The Reading Tree Bookstore Management System
 
-Clone the Repository
+### Setup Instructions
+#### Clone the Repository
 
+```bash
 git clone <repository-url>
 cd <repository-directory>
+```
 
-Set Up Environment
+#### Set Up Environment
 
-Install dependencies and activate the virtual environment using Pipenv:
+Install dependencies and activate the virtual environment using Pipenv. Run these commands in the root directory:
 
+```bash
 pipenv install
 pipenv shell
+```
 
-Database Initialization
+#### Database Initialization
 
-Set up and migrate the database:
+Run the following commands in the root directory to initialize and seed the database:
 
-cd lib/db
-alembic init migrations
-alembic revision --autogenerate -m "Initial migration"
-alembic upgrade head
+```bash
+python -m lib.db.seed
+```
 
-Run the Application
+This creates and seeds a `bookstore.db` file in the root directory. You will see a confirmation message upon completion.
 
-python lib/cli.py
+#### Run The Application
 
-Key Components
+Start the CLI application by running the following command in the root directory:
 
-CLI (lib/cli.py)
+```bash
+python -m lib.cli
+```
 
-The entry point for the application. Handles user interaction via menus and prompts. Includes:
 
-main(): The main loop for user interaction.
+## License
 
-menu(): Displays options and routes user choices.
+MIT License  
+Copyright © 2025 Brian Kinyanjui Gathui
 
-Database Models (lib/db/models.py)
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
-Defines the database schema:
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
-Books: Represents inventory items with attributes for title, author, genre, price, and availability.
-
-Authors: Tracks author details, supporting a one-to-many relationship with Books.
-
-Transactions: Logs sales or other bookstore transactions.
-
-Helper Functions (lib/helpers.py)
-
-Reusable functions for:
-
-Input validation.
-
-Displaying formatted data to the user.
-
-Exiting the application gracefully.
-
-Seed Script (lib/db/seed.py)
-
-Populates the database with initial data for testing.
-
-Dependencies
-
-SQLAlchemy: ORM for database interactions.
-
-Alembic: Handles migrations.
-
-Pipenv: Manages the Python environment and dependencies.
-
-Usage Guide
-
-Inventory Management
-
-Add a new book:
-
-Enter the title, author, genre, and price as prompted.
-
-Search books by author:
-
-Input the author’s name to view related books.
-
-Edit book details:
-
-Choose a book ID and specify the new details.
-
-Learning Goals
-
-This project demonstrates the following:
-
-Use of SQLAlchemy ORM and Alembic for database management.
-
-Best practices in CLI design, including input validation and user feedback.
-
-Use of Python data structures (lists, tuples, dictionaries) for data handling.
-
-Modular and maintainable Python codebase.
-
-Future Enhancements
-
-Dark mode for the CLI.
-
-Integration of a loyalty program.
-
-Automated supplier management and notifications.
-
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
