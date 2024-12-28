@@ -1,15 +1,10 @@
 # Phase 3 Final Project – The Reading Tree Bookstore Management System
----
 
 **Author:** Brian Kinyanjui Gathui  
 **Email:** briankgathui@gmail.com
 
----
-
 ## Project Description
 The Reading Tree Bookstore Management System is a Command-Line Interface (CLI) application developed for "The Reading Tree," a small bookstore in Nairobi. This Python-based application utilizes SQLAlchemy for Object-Relational Mapping (ORM) and Alembic for database migrations, streamlining the management of book inventory, authors, and sales transactions. This project aims to enhance operational efficiency for "The Reading Tree" by providing a robust and user-friendly system for managing core business aspects.
-
----
 
 ## User Stories for the MVP
 
@@ -21,8 +16,6 @@ The Reading Tree Bookstore Management System is a Command-Line Interface (CLI) a
 
 3. **Inventory Update**  
    As a manager, I want to delete or edit the details of a book (e.g., when the price changes or a book is out of stock) so that the store’s records reflect real-time availability and pricing.
-
----
 
 ## Key Features
 
@@ -42,17 +35,12 @@ The Reading Tree Bookstore Management System is a Command-Line Interface (CLI) a
   - Leverages SQLAlchemy ORM for efficient data manipulation.  
   - Employs Alembic for database migrations, facilitating future database schema changes.
 
----
-
 ## Technologies Used
-
 
 - Python
 - SQLAlchemy ORM
 - Alembic for database migrations
 - Pipenv for virtual environment and dependency management
-
----
 
 ## Project Structure
 
@@ -70,7 +58,7 @@ The Reading Tree Bookstore Management System is a Command-Line Interface (CLI) a
     ├── helpers.py            # Helper functions for CLI logic
     ├── debug.py              # Debugging utilities
 ```
----
+
 
 ## How to Use and Access The Reading Tree Bookstore Management System
 
