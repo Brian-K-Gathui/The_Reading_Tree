@@ -9,7 +9,6 @@ sqlalchemy = "*"
 alembic = "*"
 click = "*"
 faker = "*"
-pytest = "*"
 colorama = "*"
 
 [dev-packages]
