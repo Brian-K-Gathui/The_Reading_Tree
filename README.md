@@ -6,6 +6,37 @@
 ## Project Description
 The Reading Tree Bookstore Management System is a Command-Line Interface (CLI) application developed for "The Reading Tree," a small bookstore in Nairobi. This Python-based application utilizes SQLAlchemy for Object-Relational Mapping (ORM) and Alembic for database migrations, streamlining the management of book inventory, authors, and sales transactions. This project aims to enhance operational efficiency for "The Reading Tree" by providing a robust and user-friendly system for managing core business aspects.
 
+## Project Setup, Intializations and Access
+### 1. Clone the Repository
+```bash
+git clone <repository-url>
+cd <repository-directory>
+```
+
+### 2. Set Up the Virtual Environment
+Install dependencies using Pipenv:
+```bash
+pipenv install
+```
+
+Activate the virtual environment:
+```bash
+pipenv shell
+```
+
+### 3. Seed the Database
+Run the database seeding script:
+```bash
+python -m lib.db.seed
+```
+This creates and seeds the `bookstore.db` file.
+
+### 4. Run the Application
+Start the CLI application:
+```bash
+python -m lib.cli
+```
+
 ## User Stories for the MVP
 
 1. **Inventory Management**  
@@ -34,6 +65,84 @@ The Reading Tree Bookstore Management System is a Command-Line Interface (CLI) a
   - Well-structured relational database with at least six tables: Books, Authors, Publishers, Warehouses, and Customers.  
   - Leverages SQLAlchemy ORM for efficient data manipulation.  
   - Employs Alembic for database migrations, facilitating future database schema changes.
+
+## CLI Usage and Workflow
+
+The CLI for The Reading Tree Bookstore Management System provides a user-friendly interface for managing the bookstore's inventory and customer details. Below is a detailed description of how to use the CLI and the workflow for each available function:
+
+### Main Menu
+
+Upon launching the application, users are greeted with a main menu displaying six options:
+
+1. **Manage Publishers**  
+2. **Manage Authors**  
+3. **Manage Books**  
+4. **Manage Warehouses**  
+5. **Manage Customers**  
+6. **Exit**
+
+Users can navigate through the menu by entering the corresponding number for their desired operation. Each submenu provides options to perform specific actions related to the chosen entity.
+
+---
+
+### Publisher Management
+- **Add Publisher**: Allows users to input a publisher's details such as name, address, phone, and URL.
+- **View All Publishers**: Displays a table of all publishers in the database.
+- **Update Publisher**: Prompts the user to select a publisher by name and update their details.
+- **Delete Publisher**: Allows users to remove a publisher by name.
+- **Find Publisher by Name**: Searches for a specific publisher and displays their details.
+- **Go Back**: Returns to the main menu.
+
+---
+
+### Author Management
+- **Add Author**: Enables users to add an author by entering their name, address, and URL.
+- **View All Authors**: Lists all authors in the system.
+- **Update Author**: Prompts the user to update the details of an existing author.
+- **Delete Author**: Removes an author based on their name.
+- **Find Author by Name**: Searches for an author by name and displays their information.
+- **Go Back**: Returns to the main menu.
+
+---
+
+### Book Management
+- **Add Book**: Allows users to add a new book, requiring details like ISBN, title, price, publisher, and year.
+- **View All Books**: Lists all books stored in the database.
+- **Update Book**: Updates an existing book's details based on its ISBN.
+- **Delete Book**: Removes a book from the inventory by its ISBN.
+- **Find Book by ISBN**: Searches for a specific book using its ISBN.
+- **Go Back**: Returns to the main menu.
+
+---
+
+### Warehouse Management
+- **Add Warehouse**: Lets users add a new warehouse by entering its code, phone number, and address.
+- **View All Warehouses**: Displays all registered warehouses.
+- **Update Warehouse**: Prompts the user to modify a warehouse's details.
+- **Delete Warehouse**: Deletes a warehouse by its code.
+- **Find Warehouse by Code**: Searches for a warehouse based on its unique code.
+- **Go Back**: Returns to the main menu.
+
+---
+
+### Customer Management
+- **Add Customer**: Allows users to input a customer's details such as email, name, phone, and address.
+- **View All Customers**: Lists all customers in the database.
+- **Update Customer**: Updates customer details based on their email.
+- **Delete Customer**: Removes a customer from the system by their email.
+- **Find Customer by Email**: Searches for a specific customer using their email.
+- **Go Back**: Returns to the main menu.
+
+---
+
+### Exit
+Selecting the "Exit" option clears the terminal screen and displays a goodbye message before terminating the program.
+
+---
+
+### Input Validation
+All user inputs are validated using the `validate_input` function to ensure correct data types and acceptable values. This feature prevents invalid entries and enhances the system's reliability.
+
 
 ## Technologies Used
 
@@ -64,38 +173,6 @@ THE_READING_TREE/            # Project root
 ├── Pipfile                  # Pipenv dependency file
 ├── Pipfile.lock             # Locked dependencies
 └── README.md                # Project documentation
-```
-
-
-## Project Setup, Intializations and Access
-### 1. Clone the Repository
-```bash
-git clone <repository-url>
-cd <repository-directory>
-```
-
-### 2. Set Up the Virtual Environment
-Install dependencies using Pipenv:
-```bash
-pipenv install
-```
-
-Activate the virtual environment:
-```bash
-pipenv shell
-```
-
-### 3. Seed the Database
-Run the database seeding script:
-```bash
-python -m lib.db.seed
-```
-This creates and seeds the `bookstore.db` file.
-
-### 4. Run the Application
-Start the CLI application:
-```bash
-python -m lib.cli
 ```
 
 ## Database Configuration and Migration Check
